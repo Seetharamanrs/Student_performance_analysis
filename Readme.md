@@ -24,8 +24,9 @@ No missing values found in dataset
 ## Key Insights
 
 - The most important feature for predicting `G3` (final grade) is `G2` (second period grade).
-- This suggests that students who score well in `G2` are highly likely to score similarly in `G3`.
-- Features like **study time**, **parental education**, and **alcohol consumption** also showed varying degrees of correlation with academic performance.
+- This suggests that students who score well in `G2`(second period grade) are highly likely to score similarly in `G3`(final grade).
+- Features like **study time**, **parental education**(especially the mother's), and **alcohol consumption**(weekdays and weekends) also showed varying degrees of correlation with academic performance.
+- These insights can help identify at-risk students early for timely academic support.
 - All relevant plots and graphs can be found in the `visuals/` directory.
 
 ---
@@ -33,10 +34,14 @@ No missing values found in dataset
 ##  Models Used
 
 ### 1. Random Forest Regressor
-- **Metric:** R² score, Mean Squared Error
-- **Result:** High importance given to `G2`
+- **Approach:** Converted final grade into binary (Pass/Fail) for classification.
+- **Hyperparameter Tuning:** Used `GridSearchCV` to optimize performance.
+- **Accuracy:** ~92.3% on test data.
+- **Top Feature:** `G2` (Second period grade)`
 
 ### 2. Logistic Regression
+- Applied for binary classification (pass/fail) using the same features
+- Also validated the high predictive power of G2 (second period grade)
 - Attempted classification based on grade performance buckets
 
 ---
